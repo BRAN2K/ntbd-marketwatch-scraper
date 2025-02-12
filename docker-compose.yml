@@ -1,0 +1,15 @@
+services:
+  ntbd-martketwatch-dw-postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: dw-martketwatch
+      POSTGRES_USER: market
+      POSTGRES_PASSWORD: watch
+    ports:
+      - "5433:5432"
+    volumes:
+      - ntbd-martketwatch-dw-postgres-volume:/var/lib/postgresql/data
+    restart: always
+
+volumes:
+  ntbd-martketwatch-dw-postgres-volume:
