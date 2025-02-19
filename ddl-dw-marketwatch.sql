@@ -41,7 +41,7 @@ CREATE TABLE Fato_Valor_Diario (
 	high FLOAT NOT NULL,
 	low FLOAT NOT NULL,
 	close FLOAT NOT NULL,
-	volume INT NOT NULL,
+	volume BIGINT NOT NULL,
 	PRIMARY KEY (fk_tempo, fk_acao),
 	CONSTRAINT fk_valor_diario_tempo FOREIGN KEY (fk_tempo) REFERENCES Dimensao_Tempo (id_tempo),
 	CONSTRAINT fk_valor_diario_acao FOREIGN KEY (fk_acao) REFERENCES Dimensao_acao (id_acao)
@@ -55,7 +55,7 @@ CREATE TABLE Fato_Valor_Mensal (
 	high FLOAT NOT NULL,
 	low FLOAT NOT NULL,
 	close FLOAT NOT NULL,
-	volume INT NOT NULL,
+	volume BIGINT NOT NULL,
 	PRIMARY KEY (fk_acao, fk_tempo),
 	CONSTRAINT fk_valor_mensal_acao FOREIGN KEY (fk_acao) REFERENCES Dimensao_acao (id_acao),
 	CONSTRAINT fk_valor_mensal_tempo FOREIGN KEY (fk_tempo) REFERENCES Dimensao_Tempo (id_tempo)
