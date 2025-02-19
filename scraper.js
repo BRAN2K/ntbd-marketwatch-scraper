@@ -82,9 +82,10 @@
       // Para cada linha (exceto o cabeçalho) adiciona os campos extras
       for (let j = 1; j < lines.length; j++) {
         if (lines[j].trim() !== "") {
+          const firstSector = info.sector.split(",")[0].trim();
           lines[j] =
             lines[j] +
-            `,${info.ticker},${info.country},${info.name},${info.exchange},${info.sector}`;
+            `,${info.ticker},${info.country},${info.name},${info.exchange},${firstSector}`;
         }
       }
       csvResults.push(lines.join("\n"));
